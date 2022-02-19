@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main
+{   int [][]adjmatrix;
+    public Main(int nodes)
+    {
+        this.adjmatrix=new int[nodes][nodes];
+    }
+    public void graph(int a,int b)
+    {
+        adjmatrix[a][b]=1;
+        adjmatrix[b][a]=1;
+    }
+    
+	public static void main(String[] args) {
+	    Main obj=new Main(4);
+	    obj.graph(0,1);
+	    obj.graph(1,2);
+	    obj.graph(2,3);
+	    obj.graph(3,0);
+	    System.out.println(obj.adjmatrix[0][0]);
+	    for(int[] x:obj.adjmatrix)
+	    {
+	        System.out.println(Arrays.toString(x));
+	    }
+	    
+		
+	}
+}
